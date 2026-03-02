@@ -1,0 +1,61 @@
+body {
+    background: #0f0f0f;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.container {
+    width: 600px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: none;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    margin-top: 30px;
+    padding: 12px;
+    width: 100%;
+    background: #4b5cff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3646d6;
+}
+
+.preview {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.preview img {
+    width: 100%;
+    border-radius: 10px;
+}
