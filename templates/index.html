@@ -1,40 +1,94 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Professional Post Generator</title>
+
+<title>AI News Post Generator</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
-<body style="background:#111;color:white;text-align:center;font-family:sans-serif;">
 
-    <h1>Professional News Post Generator</h1>
+<body>
 
-    <form method="POST" enctype="multipart/form-data">
+<div class="bg"></div>
 
-        <p>Background Image</p>
-        <input type="file" name="background" required><br><br>
+<div class="container">
 
-        <p>Logo (PNG)</p>
-        <input type="file" name="logo" required><br><br>
+<h1>AI Post Generator</h1>
 
-        <p>Social Icons (Optional)</p>
-        <input type="file" name="icons" multiple><br><br>
+<form method="POST" enctype="multipart/form-data">
 
-        <p>Headline</p>
-        <textarea name="headline" rows="3" cols="60" required></textarea><br><br>
+<div class="upload">
 
-        <p>Highlight Words (comma separated)</p>
-        <input type="text" name="highlight"><br><br>
+<label>Background Image</label>
+<input type="file" name="background" required onchange="previewImage(event,'bgPreview')">
+<img id="bgPreview">
+</div>
 
-        <p>Username</p>
-        <input type="text" name="username" required><br><br>
+<div class="upload">
 
-        <button type="submit">Generate Post</button>
+<label>Logo</label>
+<input type="file" name="logo" required onchange="previewImage(event,'logoPreview')">
+<img id="logoPreview">
 
-    </form>
+</div>
 
-    {% if image_url %}
-        <h2>Preview</h2>
-        <img src="{{ image_url }}" width="500">
-    {% endif %}
+<div class="upload">
+
+<label>Social Icons</label>
+<input type="file" name="icons" multiple>
+
+</div>
+
+<label>Headline</label>
+<textarea name="headline" placeholder="Write headline here..." required></textarea>
+
+<label>Highlight Words</label>
+<input type="text" name="highlight" placeholder="storm,breaking,alert">
+
+<label>Username</label>
+<input type="text" name="username" placeholder="@yourpage" required>
+
+<button type="submit">Generate Post</button>
+
+</form>
+
+{% if image_url %}
+
+<div class="preview">
+
+<h2>Your Post</h2>
+
+<img src="{{ image_url }}">
+
+<a href="{{ image_url }}" download>
+
+<button class="download">⬇ Download</button>
+
+</a>
+
+</div>
+
+{% endif %}
+
+</div>
+
+<script>
+
+function previewImage(event,id){
+
+let reader=new FileReader()
+
+reader.onload=function(){
+document.getElementById(id).src=reader.result
+}
+
+reader.readAsDataURL(event.target.files[0])
+
+}
+
+</script>
 
 </body>
 </html>
