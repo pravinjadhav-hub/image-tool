@@ -1,61 +1,280 @@
-body {
-    background: #0f0f0f;
-    font-family: Arial, sans-serif;
-    color: white;
-    display: flex;
-    justify-content: center;
-    padding: 40px;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-.container {
-    width: 600px;
+/* Body */
+
+body{
+
+font-family: Arial, Helvetica, sans-serif;
+background:#050505;
+color:white;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+min-height:100vh;
+
+padding:40px;
+
+overflow-x:hidden;
+
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 30px;
+
+/* Animated Background */
+
+.bg{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:
+
+radial-gradient(circle at 20% 20%, rgba(75,92,255,0.25), transparent 40%),
+radial-gradient(circle at 80% 80%, rgba(0,255,200,0.25), transparent 40%),
+#050505;
+
+z-index:-1;
+
 }
 
-label {
-    display: block;
-    margin-top: 20px;
-    font-weight: bold;
+
+/* Main Card */
+
+.container{
+
+width:620px;
+
+background:rgba(20,20,20,0.7);
+
+backdrop-filter:blur(12px);
+
+border-radius:20px;
+
+padding:40px;
+
+box-shadow:
+
+0 0 40px rgba(0,0,0,0.8),
+0 0 20px rgba(75,92,255,0.2);
+
 }
 
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 6px;
-    border: none;
+
+/* Title */
+
+h1{
+
+text-align:center;
+
+margin-bottom:35px;
+
+font-size:28px;
+
+letter-spacing:1px;
+
 }
 
-textarea {
-    height: 100px;
+
+/* Labels */
+
+label{
+
+display:block;
+
+margin-top:20px;
+
+font-weight:600;
+
+font-size:14px;
+
 }
 
-button {
-    margin-top: 30px;
-    padding: 12px;
-    width: 100%;
-    background: #4b5cff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
+
+/* Inputs */
+
+input,
+textarea{
+
+width:100%;
+
+margin-top:8px;
+
+padding:12px;
+
+border:none;
+
+border-radius:10px;
+
+background:#0e0e0e;
+
+color:white;
+
+font-size:14px;
+
+outline:none;
+
+transition:0.2s;
+
 }
 
-button:hover {
-    background: #3646d6;
+
+/* Input Focus */
+
+input:focus,
+textarea:focus{
+
+box-shadow:0 0 10px rgba(75,92,255,0.5);
+
 }
 
-.preview {
-    margin-top: 40px;
-    text-align: center;
+
+/* Textarea */
+
+textarea{
+
+height:100px;
+
+resize:none;
+
 }
 
-.preview img {
-    width: 100%;
-    border-radius: 10px;
+
+/* Upload Section */
+
+.upload{
+
+margin-top:10px;
+
+}
+
+
+/* Preview Images */
+
+.upload img{
+
+width:100%;
+
+margin-top:12px;
+
+border-radius:12px;
+
+box-shadow:0 0 15px rgba(0,0,0,0.6);
+
+}
+
+
+/* Generate Button */
+
+button{
+
+margin-top:30px;
+
+width:100%;
+
+padding:14px;
+
+font-size:16px;
+
+font-weight:600;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+background:linear-gradient(90deg,#4b5cff,#8b5cff);
+
+color:white;
+
+transition:0.3s;
+
+}
+
+
+/* Button Hover */
+
+button:hover{
+
+transform:scale(1.04);
+
+box-shadow:0 0 20px #4b5cff;
+
+}
+
+
+/* Output Preview */
+
+.preview{
+
+margin-top:40px;
+
+text-align:center;
+
+}
+
+
+/* Output Image */
+
+.preview img{
+
+width:100%;
+
+margin-top:20px;
+
+border-radius:14px;
+
+box-shadow:0 0 30px rgba(0,0,0,0.8);
+
+}
+
+
+/* Download Button */
+
+.download{
+
+margin-top:18px;
+
+background:linear-gradient(90deg,#00ffc8,#00b8ff);
+
+}
+
+
+/* Download Hover */
+
+.download:hover{
+
+box-shadow:0 0 20px #00ffc8;
+
+}
+
+
+/* Responsive */
+
+@media (max-width:700px){
+
+.container{
+
+width:100%;
+
+padding:30px;
+
+}
+
+h1{
+
+font-size:22px;
+
+}
+
 }
