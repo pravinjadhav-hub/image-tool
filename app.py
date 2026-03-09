@@ -21,8 +21,8 @@ def create_post(bg_path, logo_path, icons, headline, username, highlight_words, 
     # -------- Professional News Black Overlay --------
     gradient = Image.new("RGBA", (width, height), (0, 0, 0, 0))
 
-    fade_start = int(height * 0.05)
-    mid_point = int(height * 0.55)
+    fade_start = int(height * 0.40)
+    mid_point = int(height * 0.75)
 
     for y in range(height):
 
@@ -44,7 +44,7 @@ def create_post(bg_path, logo_path, icons, headline, username, highlight_words, 
     draw = ImageDraw.Draw(bg)
 
     # Fonts
-    font_path = os.path.join(os.path.dirname(__file__), "fonts", "Nunito-SemiBold.ttf")
+    font_path = os.path.join(os.path.dirname(__file__), "fonts", "BebasNeueRegular.ttf")
 
     headline_font = ImageFont.truetype(font_path, 72)
     small_font = ImageFont.truetype(font_path, 26)
@@ -181,7 +181,7 @@ def index():
     return render_template("index.html", image_url=image_url)
 
 
-# 🔥 Production Ready Run (Render Compatible)
+# Production Ready Run (Render Compatible)
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
